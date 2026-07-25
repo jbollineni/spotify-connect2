@@ -35,7 +35,8 @@ options+=(--disable-audio-cache)
 # backend
 backend=$(bashio::config 'backend')
 fifo_path=$(bashio::config 'fifo_path')
-if [[ "${backend}" == "pipe"]]; then
+
+if [[ "${backend}" == "pipe" ]]; then
   options+=(--backend pipe)
   options+=(--device "$fifo_path")
 elif [[ "${backend}" == "pulseaudio" ]]; then

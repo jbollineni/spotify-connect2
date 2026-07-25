@@ -41,6 +41,7 @@ if [[ "${backend}" == "pipe" ]]; then
   options+=(--device "$fifo_path")
 elif [[ "${backend}" == "pulseaudio" ]]; then
   options+=(--backend pulseaudio)
+fi
 
 # Are we running in debug mode?
 if bashio::debug; then
